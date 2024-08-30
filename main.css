@@ -1,0 +1,80 @@
+:root{
+    --canvas-x: 0px;
+    --canvas-y: 0px;
+    --canvas-zoom: 1;
+    --selector-x: 0px;
+    --selector-y: 0px;
+    --selector-size: 0px
+}
+
+html, body{
+    overflow: hidden;
+    margin: 0px;
+    background: rgb(50, 50, 50);
+}
+
+#container{
+    height: 100%;
+}
+
+#canvasZoom{
+    height: inherit;
+    scale: var(--canvas-zoom);
+}
+
+#canvasTransform{
+    height: inherit;
+    transform: translate(var(--canvas-x),var(--canvas-y));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+canvas{
+    height: inherit;
+    cursor: crosshair;
+}
+
+.pixelate{
+    image-rendering: optimizeSpeed;
+    -ms-interpolation-mode: nearest-neighbor;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: -webkit-crisp-edges;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -o-crisp-edges;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+}
+
+#selector{
+    position: absolute;
+    border: 1px solid black;
+    left: var(--selector-x);
+    top: var(--selector-y);
+    width: var(--selector-size);
+    height: var(--selector-size);
+}
+
+.no-select {
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    pointer-events: none;
+} 
+
+nav{
+    position: relative;
+    z-index: 50;
+    width: 100%;
+    height: 50px;
+    background: whitesmoke;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo{
+    height: 120%;
+}
